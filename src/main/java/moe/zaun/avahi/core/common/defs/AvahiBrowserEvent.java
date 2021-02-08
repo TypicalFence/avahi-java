@@ -2,6 +2,9 @@ package moe.zaun.avahi.core.common.defs;
 
 import moe.zaun.avahi.core.JnaEnum;
 
+/**
+ * Can't seem to get this thing mapped in the callback :<
+ */
 public enum AvahiBrowserEvent implements JnaEnum<AvahiBrowserEvent> {
     NEW,
     REMOVE,
@@ -22,5 +25,9 @@ public enum AvahiBrowserEvent implements JnaEnum<AvahiBrowserEvent> {
             }
         }
         return null;
+    }
+
+    public static AvahiBrowserEvent fromValue(int i) {
+        return AvahiBrowserEvent.values()[0].getForValue(i);
     }
 }

@@ -11,11 +11,11 @@ public interface AvahiServiceBrowserCallback extends Callback {
     void avahiServiceBrowserCallBack(
             AvahiServiceBrowserPointer browser,
             AvahiIfIndex avahiInterface,
-            AvahiBrowserEvent event,
+            int event,
             String name,
             String type,
             String domain,
-            AvahiLookupResultFlags flags,
+            int flags,
             IntByReference userData);
 
 }

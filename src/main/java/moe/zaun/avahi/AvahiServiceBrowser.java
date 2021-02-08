@@ -36,17 +36,17 @@ public abstract class AvahiServiceBrowser implements AvahiServiceBrowserCallback
             String name,
             String type,
             String domain,
-            AvahiLookupResultFlags flags);
+            int flags);
 
     @Override
     public final void avahiServiceBrowserCallBack(AvahiServiceBrowserPointer browser,
                                                   AvahiIfIndex avahiInterface,
-                                                  AvahiBrowserEvent event,
+                                                  int event,
                                                   String name,
                                                   String type,
                                                   String domain,
-                                                  AvahiLookupResultFlags flags,
+                                                  int flags,
                                                   IntByReference userData) {
-        this.callBack(this, avahiInterface, event, name, type, domain, flags);
+        this.callBack(this, avahiInterface, AvahiBrowserEvent.fromValue(event), name, type, domain, flags);
     }
 }
