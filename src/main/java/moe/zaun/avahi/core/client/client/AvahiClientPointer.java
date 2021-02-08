@@ -5,5 +5,6 @@ import com.sun.jna.ptr.IntByReference;
 /**
  * A connection context.
  */
-public class AvahiClient extends IntByReference {
+public class AvahiClientPointer extends IntByReference {
+
 }

@@ -1,14 +1,15 @@
 package moe.zaun.avahi.core.client.lookUp;
 
+import com.sun.jna.Callback;
 import com.sun.jna.ptr.IntByReference;
 import moe.zaun.avahi.core.common.adress.AvahiIfIndex;
 import moe.zaun.avahi.core.common.defs.AvahiBrowserEvent;
 import moe.zaun.avahi.core.common.defs.AvahiLookupResultFlags;
 
-public abstract class AvahiServiceBrowserCallback {
+public interface AvahiServiceBrowserCallback extends Callback {
 
-    public abstract void avahiServiceBrowserCallBack(
-            AvahiServiceBrowser browser,
+    void avahiServiceBrowserCallBack(
+            AvahiServiceBrowserPointer browser,
             AvahiIfIndex avahiInterface,
             AvahiBrowserEvent event,
             String name,

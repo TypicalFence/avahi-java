@@ -5,5 +5,5 @@ import com.sun.jna.ptr.IntByReference;
 /**
  * A service browser object.
  */
-public class AvahiServiceBrowser extends IntByReference {
+public class AvahiServiceBrowserPointer extends IntByReference {
 }

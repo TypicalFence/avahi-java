@@ -1,7 +1,8 @@
 package moe.zaun.avahi.core.client;
-import com.sun.jna.Library;
 import com.sun.jna.Native;
+import moe.zaun.avahi.core.client.client.ClientHeader;
+import moe.zaun.avahi.core.client.lookUp.LookUpHeader;
 
-interface LibAvahiClient extends Library {
+public interface LibAvahiClient extends LookUpHeader, ClientHeader {
     LibAvahiClient INSTANCE = (LibAvahiClient) Native.loadLibrary("avahi-client", LibAvahiClient.class);
 }
