@@ -3,6 +3,8 @@ plugins {
     id 'java-library'
 }
 
+apply plugin: "maven"
+
 group 'moe.zaun'
 version '1.0-SNAPSHOT'
 

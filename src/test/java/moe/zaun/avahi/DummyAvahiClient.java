@@ -1,13 +1,13 @@
 package moe.zaun.avahi;
 
-public class DummyAvahiClient extends AvahiClient {
+public class DummyAvahiClient extends AbstractAvahiClient {
 
     protected DummyAvahiClient(AvahiPoll poll) {
         super(poll);
     }
 
     @Override
-    protected void callBack(AvahiClient client, int state) {
+    protected void callBack(AbstractAvahiClient client, int state) {
 
     }
 }

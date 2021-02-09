@@ -8,6 +8,6 @@ public class ClientTest {
     void canBeCreated() {
         AvahiSimplePoll simplePoll = new AvahiSimplePoll();
         AvahiPoll poll = simplePoll.get();
-        AvahiClient client = new DummyAvahiClient(poll);
+        AbstractAvahiClient client = new DummyAvahiClient(poll);
     }
 }
