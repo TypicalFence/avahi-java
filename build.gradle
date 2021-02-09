@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'java-library'
+    id "dev.clojurephant.clojure" version "0.6.0"
 }
 
 apply plugin: "maven"
@@ -9,6 +10,10 @@ group 'moe.zaun'
 version '1.0-SNAPSHOT'
 
 repositories {
+    maven {
+        name = 'Clojars' // name can be ommitted, but is helpful in troubleshooting
+        url = 'https://repo.clojars.org/'
+    }
     mavenCentral()
 }
 
@@ -16,8 +21,26 @@ dependencies {
     compile "net.java.dev.jna:jna:4.5.0"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    // requires a version of Clojure with prepl (1.10+)
+    implementation 'org.clojure:clojure:1.10.1'
+    // and any other dependencies you want on the compile classpath
+    // implementation 'group:artifact:version'
+
+    // needed for test integration
+    testRuntimeOnly 'org.ajoberstar:jovial:0.3.0'
+    // and any other test-specific dependencies
+    // testImplementation 'group:artifact:version'
+
+    // dependencies for REPL use only
+    devImplementation 'org.clojure:tools.namespace:1.1.0'
 }
 
+
 test {
+    useJUnitPlatform()
+}
+
+// needed for test integration
+tasks.withType(Test) {
     useJUnitPlatform()
 }

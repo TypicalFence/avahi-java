@@ -13,4 +13,6 @@ public interface AvahiClientCallback extends Consumer<AvahiClientCallback.Argume
         }
     }
 
+    @Override
+    void accept(Arguments arguments);
 }

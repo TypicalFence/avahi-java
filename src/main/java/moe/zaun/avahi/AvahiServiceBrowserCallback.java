@@ -33,4 +33,6 @@ public interface AvahiServiceBrowserCallback extends Consumer<AvahiServiceBrowse
         }
     }
 
+    @Override
+    void accept(Arguments arguments);
 }
